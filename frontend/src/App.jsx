@@ -4,12 +4,13 @@ function App() {
   const [serverMsg, setServerMsg] = useState("Loading...");
 
   useEffect(() => {
-    // Calling your Node.js server
-    fetch("http://localhost:5000")
-      .then((res) => res.text()) // Use .text() because your server sends text/plain
+    fetch("http://nodejs-production-7abc.up.railway.app" )
+      .then((res) => res.text())
       .then((data) => setServerMsg(data))
       .catch((err) => console.error("Error:", err));
   }, []);
+
+  // ========================================================
 
   return (
     <div>
