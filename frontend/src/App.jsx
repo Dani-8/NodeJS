@@ -1,5 +1,6 @@
-import 
+import Guide from "./components/Guide";
 import { useState, useEffect } from "react"
+import { Link } from "react-router-dom";
 
 function App() {
   const [serverMsg, setServerMsg] = useState("Loading...")
@@ -48,13 +49,18 @@ function App() {
   // ======================================================== 
 
   return (
-    <div>
-      <h1>My First Full-Stack</h1>
-      <p>Server says: <strong>{serverMsg}</strong></p>
-    </div>
+    <>
+      <div>
+        <h1>My First Full-Stack</h1>
+        <p>Server says: <strong>{serverMsg}</strong></p>
+      </div>
 
-
-
+      <div>
+        <Link to="/guide" className="text-blue-500 underline">
+          Go to the Full-Stack Guide
+        </Link>
+      </div>
+    </>
   );
 }
 

@@ -1,4 +1,7 @@
-export const steps = [
+import { FolderTree, Server, Send, Laptop,  } from 'lucide-react'
+
+
+const steps = [
     {
         title: "1. Project Architecture",
         icon: <FolderTree className="text-rose-500" />,
@@ -80,3 +83,6 @@ Status: 200 OK`,
         ]
     }
 ];
+
+
+export default steps

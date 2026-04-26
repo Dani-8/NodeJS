@@ -1,6 +1,7 @@
-import { CheckCircle, ArrowRight } from 'lucide-react'
+import { CheckCircle, ArrowRight, FolderTree} from 'lucide-react'
 import { useState } from "react";
-import steps from "./data"
+import steps from "./steps"
+
 
 export default function Guide(){
       const [activeStep, setActiveStep] = useState(0);
