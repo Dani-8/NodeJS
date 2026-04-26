@@ -19,11 +19,12 @@ export default function Guide() {
                 {/* Header */}
                 <header className="mb-12 text-center">
                     <h1 className="text-4xl font-bold text-slate-800 mb-2">Full-Stack Beginner Guide</h1>
-                    <p className="text-slate-500">A step-by-step interactive map for your classmates</p>
+                    <p className="text-slate-500">A step-by-step interactive map for classmates</p>
                 </header>
 
+
                 {/* Step Navigation */}
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
+                <div className="grid grid-cols-1 md:grid-cols-5 gap-4 mb-10">
                     {steps.map((step, index) => (
                         <button
                             key={index}
@@ -34,14 +35,17 @@ export default function Guide() {
                                 }`}
                         >
                             {step.icon}
+
                             <span className="text-xs font-bold uppercase tracking-wider">Step {index + 1}</span>
                         </button>
                     ))}
                 </div>
 
+
+
                 {/* Content Card */}
                 <div className={`rounded-3xl p-6 md:p-10 shadow-xl transition-all duration-500 ${steps[activeStep].color}`}>
-                    <div className="flex flex-col md:flex-row gap-8">
+                    <div className="flex flex-col md:flex-row gap-20 ">
                         <div className="flex-1">
                             <h2 className="text-2xl font-bold text-slate-800 mb-4 flex items-center gap-2">
                                 {steps[activeStep].title}
@@ -68,6 +72,7 @@ export default function Guide() {
                                     <div className="w-2.5 h-2.5 rounded-full bg-amber-500/50"></div>
                                     <div className="w-2.5 h-2.5 rounded-full bg-emerald-500/50"></div>
                                 </div>
+
                                 <pre className="text-xs md:text-sm text-emerald-100 font-mono leading-relaxed overflow-x-auto whitespace-pre">
                                     {steps[activeStep].code}
                                 </pre>
@@ -81,10 +86,10 @@ export default function Guide() {
                 {/* Footer Navigation */}
                 <div className="mt-8 flex justify-between items-center text-slate-400">
                     <p className="text-sm italic">Press the icons above to navigate the lesson</p>
+
                     {activeStep < steps.length - 1 && (
-                        <button
-                            onClick={() => setActiveStep(prev => prev + 1)}
-                            className="flex items-center gap-2 text-emerald-600 font-bold hover:gap-3 transition-all"
+                        <button onClick={() => setActiveStep(prev => prev + 1)}
+                            className="flex items-center gap-2 text-emerald-600 font-bold hover:gap-3 transition-all cursor-pointer"
                         >
                             Next Step <ArrowRight className="w-4 h-4" />
                         </button>

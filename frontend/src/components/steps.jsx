@@ -1,4 +1,4 @@
-import { FolderTree, Server, Send, Laptop,  } from 'lucide-react'
+import { FolderTree, Server, Send, Laptop, Cloud } from 'lucide-react'
 
 
 const steps = [
@@ -6,7 +6,7 @@ const steps = [
         title: "1. Project Architecture",
         icon: <FolderTree className="text-rose-500" />,
         color: "bg-rose-50",
-        content: "Organize your life before you code. We separate the 'Brain' from the 'Face'.",
+        content: "Structure your project first. We keep Logic (Backend) and UI (Frontend) in separate worlds.",
         code: `my-app/
 ├── backend/
 │   └── server.js      <-- Node.js Logic
@@ -68,7 +68,8 @@ Status: 200 OK`,
         color: "bg-emerald-50",
         content: "Using async/await to fetch data from your local or production server.",
         code: `async function getData() {
-  const localURL = "http://localhost:5000";
+  const localURL = "http://localhost:5000"
+
   try {
     const res = await fetch(localURL);
     const data = await res.text();
@@ -82,6 +83,26 @@ Status: 200 OK`,
             "useState: Saves the message to show it on screen.",
             "try/catch: Prevents the app from crashing if server is off."
         ]
+    },
+    {
+      title: "5. Deployment (Going Live)",
+      icon: <Cloud className="text-rose-500" />,
+      color: "bg-rose-50",
+      content: "Host your apps so the world can see them. Use Railway for Backend and Vercel for Frontend.",
+      code: `Backend (Railway):
+1. Connect GitHub.
+2. Select "backend" as Root Directory.
+3. Railway auto-starts node server.js.
+
+Frontend (Vercel):
+1. Connect GitHub.
+2. Select "frontend" as Root Directory.
+3. Framework: Vite.`,
+      details: [
+        "ROOT DIRECTORY: You MUST select the specific folder (backend or frontend) after selecting your repo.",
+        "Environment Variables: Store your Production URLs here.",
+        "Vercel: Best for React. Railway: Best for Node.js."
+      ]
     }
 ];
 
