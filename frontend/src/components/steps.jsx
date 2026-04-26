@@ -10,7 +10,8 @@ const steps = [
         code: `my-app/
 ├── backend/
 │   └── server.js      <-- Node.js Logic
-└── frontend/
+|
+└── frontend/      <------ Vite Project!...
     └── src/
         └── App.jsx    <-- React Logic`,
         details: [

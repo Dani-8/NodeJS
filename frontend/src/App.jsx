@@ -55,8 +55,9 @@ function App() {
         <p>Server says: <strong>{serverMsg}</strong></p>
       </div>
 
-      <div>
-        <Link to="/guide" className="text-blue-500 underline">
+
+      <div className="mt-55 text-center">
+        <Link to="/guide" className="text-emerald-500 underline hover:text-rose-500 transition-colors">
           Go to the Full-Stack Guide
         </Link>
       </div>
