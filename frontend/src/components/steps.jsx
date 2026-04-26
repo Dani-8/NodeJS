@@ -85,24 +85,28 @@ Status: 200 OK`,
         ]
     },
     {
-      title: "5. Deployment (Going Live)",
-      icon: <Cloud className="text-rose-500" />,
-      color: "bg-rose-50",
-      content: "Host your apps so the world can see them. Use Railway for Backend and Vercel for Frontend.",
-      code: `Backend (Railway):
+        title: "5. Deployment (Going Live)",
+        icon: <Cloud className="text-rose-500" />,
+        color: "bg-rose-50",
+        content: "Host your apps so the world can see them. Use Railway for Backend and Vercel for Frontend.",
+        code: `Backend (Railway):
 1. Connect GitHub.
 2. Select "backend" as Root Directory.
-3. Railway auto-starts node server.js.
+3. Add Start Script in package.json: 
+    scripts: { "start": "node server.js"}
+4. Deploy and get your Production URL.
+
 
 Frontend (Vercel):
 1. Connect GitHub.
 2. Select "frontend" as Root Directory.
-3. Framework: Vite.`,
-      details: [
-        "ROOT DIRECTORY: You MUST select the specific folder (backend or frontend) after selecting your repo.",
-        "Environment Variables: Store your Production URLs here.",
-        "Vercel: Best for React. Railway: Best for Node.js."
-      ]
+3. Build: npm run build
+4. Output: dist`,
+        details: [
+            "ROOT DIRECTORY: You MUST select the specific folder (backend or frontend) after selecting your repo.",
+            "START SCRIPT: Railway needs (package.json) in backend folder to know how to start your server.",
+            "VERCEL: Auto-detects Vite, but ensure 'dist' is the output folder & build command is correct."
+        ]
     }
 ];
 

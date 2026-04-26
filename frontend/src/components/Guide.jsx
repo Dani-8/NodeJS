@@ -73,7 +73,7 @@ export default function Guide() {
                                     <div className="w-2.5 h-2.5 rounded-full bg-emerald-500/50"></div>
                                 </div>
 
-                                <pre className="text-xs md:text-sm text-emerald-100 font-mono leading-relaxed overflow-x-auto whitespace-pre">
+                                <pre className="text-xs text-emerald-100 font-mono leading-relaxed overflow-x-auto whitespace-pre">
                                     {steps[activeStep].code}
                                 </pre>
                             </div>
