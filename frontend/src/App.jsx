@@ -4,7 +4,7 @@ function App() {
   const [serverMsg, setServerMsg] = useState("Loading...");
 
   useEffect(() => {
-    fetch("https://nodejs-production-7abc.up.railway.app" )
+    fetch("https  ://nodejs-production-7abc.up.railway.app" || "http://localhost:3000")
       .then((res) => res.text())
       .then((data) => setServerMsg(data))
       .catch((err) => console.error("Error:", err));
