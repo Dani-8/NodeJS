@@ -1,8 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from "react"
 
 function App() {
-  const [serverMsg, setServerMsg] = useState("Loading...");
-
+  const [serverMsg, setServerMsg] = useState("Loading...")
 
   // useEffect(() => {
   //   fetch("https://nodejs-production-7abc.up.railway.app")
@@ -19,29 +18,31 @@ function App() {
       const localURL = "http://localhost:5000";
 
       try {
-        console.log("Trying LOCAL server...");
-        const res = await fetch(localURL);
-        const data = await res.text();
-        console.log("LOCAL server worked");
-        setServerMsg(data);
+        console.log("Trying LOCAL server...")
+        const res = await fetch(localURL)
+        const data = await res.text()
+
+        console.log("LOCAL server worked")
+        setServerMsg(data)
       } catch (e) {
-        console.log("LOCAL failed, trying PROD...");
+        console.log("LOCAL failed...")
 
         try {
-          console.log("Trying PROD server...");
-          const res = await fetch(prodURL);
-          const data = await res.text();
-          console.log("PROD server worked");
-          setServerMsg(data);
+          console.log("Trying PROD server...")
+          const res = await fetch(prodURL)
+          const data = await res.text()
+
+          console.log("PROD server worked")
+          setServerMsg(data)
         } catch (err) {
-          console.log("BOTH FAILED");
-          setServerMsg("Both servers failed");
+          console.log("BOTH FAILED")
+          setServerMsg("Both servers failed")
         }
       }
     }
 
-    getData();
-  }, []);
+    getData()
+  }, [])
 
   // ======================================================== 
 
@@ -53,4 +54,4 @@ function App() {
   );
 }
 
-export default App;
+export default App

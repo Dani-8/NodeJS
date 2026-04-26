@@ -13,4 +13,4 @@ const server = http.createServer((req, res) => {
 // 3. LISTEN: The server stays awake on port 5000
 server.listen(5000, () => {
   console.log("Server running on http://localhost:5000");
-});
+})
