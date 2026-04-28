@@ -9,9 +9,10 @@ const steps = [
         content: "Structure your project first. We keep Logic (Backend) and UI (Frontend) in separate worlds.",
         code: `my-app/
 ├── backend/
-│   └── server.js      <-- Node.js Logic
+│   └── server.js      <-- Node.js + Express Logic
+│   └── package.json   <-- Backend dependencies & start script
 |
-└── frontend/      <------ Vite Project!...
+└── frontend/      <------ Vite Project!
     └── src/
         └── App.jsx    <-- React Logic`,
         details: [
