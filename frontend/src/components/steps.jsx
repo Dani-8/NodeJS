@@ -1,5 +1,5 @@
 import { FolderTree, Server, Send, Laptop, Cloud } from 'lucide-react'
-
+import serverJS from '../../../backend/server?raw'
 
 const steps = [
     {
@@ -26,20 +26,7 @@ const steps = [
         icon: <Server className="text-emerald-500" />,
         color: "bg-emerald-50",
         content: "Your core Node.js server using the built-in 'http' module.",
-        code: `const http = require("http");
-
-const server = http.createServer((req, res) => {
-  // CORS: Allows React to talk to Node
-  res.setHeader("Access-Control-Allow-Origin", "*"); 
-  res.setHeader("Content-Type", "text/plain");
-
-  res.writeHead(200);
-  res.end("Hello from Node.js server!");
-});
-
-server.listen(5000, () => {
-  console.log("Running on http://localhost:5000");
-});`,
+        code: serverJS,
         details: [
             "res.setHeader: Crucial for fixing 'CORS' errors.",
             "res.end: Sends the final message to the client.",
