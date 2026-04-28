@@ -22,15 +22,15 @@ const steps = [
         ]
     },
     {
-        title: "2. The Backend (Node.js)",
+        title: "2. The Backend (Node.js + Express)",
         icon: <Server className="text-emerald-500" />,
         color: "bg-emerald-50",
-        content: "Your core Node.js server using the built-in 'http' module.",
+        content: "Your core Node.js server with Express. It listens for requests and sends responses.",
         code: serverJS,
         details: [
-            "res.setHeader: Crucial for fixing 'CORS' errors.",
-            "res.end: Sends the final message to the client.",
-            "port 5000: The server's specific 'address'."
+            "Express: A framework to build servers easily.",
+            "CORS: Allows frontend and backend to talk (different ports).",
+            "Endpoints: Define routes (e.g., GET '/') to handle requests."
         ]
     },
     {
@@ -42,7 +42,7 @@ const steps = [
 Method: GET
 
 Expected Response:
-"Hello from Node.js server!"
+"Hello from Node.js + Express server!"
 Status: 200 OK`,
         details: [
             "GET: Used to ask for data.",
@@ -60,8 +60,8 @@ Status: 200 OK`,
 
   try {
     const res = await fetch(localURL);
-    const data = await res.text();
-    setServerMsg(data); // State Update
+    const data = await res.json();
+    setServerMsg(data.message); // State Update
   } catch (e) {
     console.log("Failed to connect...");
   }
