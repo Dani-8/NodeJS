@@ -22,20 +22,20 @@ function App() {
       try {
         console.log("Trying LOCAL server...")
         const res = await fetch(localURL)
-        const data = await res.text()
+        const data = await res.json()
 
         console.log("LOCAL server worked")
-        setServerMsg(data)
+        setServerMsg(data.message)
       } catch (e) {
         console.log("LOCAL failed...")
 
         try {
           console.log("Trying PROD server...")
           const res = await fetch(prodURL)
-          const data = await res.text()
+          const data = await res.json()
 
           console.log("PROD server worked")
-          setServerMsg(data)
+          setServerMsg(data.message)
         } catch (err) {
           console.log("BOTH FAILED")
           setServerMsg("Both servers failed")

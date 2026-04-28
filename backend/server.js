@@ -10,7 +10,7 @@ app.use(express.json())
 
 
 app.get('/', (req, res) => {
-  res.json({ message: 'Hello from Node.js server!' });
+  res.json({ message: 'Hello from Node.js + Express server!' });
 })
 
 app.listen(PORT, () => {
