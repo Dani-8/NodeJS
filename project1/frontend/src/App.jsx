@@ -1,11 +1,13 @@
 import Guide from "./components/Guide";
-import Guide from "./components/Guide";
+import CodeExplorer from "./page/CodeExplorer";
 import { useState, useEffect } from "react"
 import { Link } from "react-router-dom";
 
 function App() {
   const [serverMsg, setServerMsg] = useState("Loading...")
 
+  // UNCOMMENT THIS & TEST THIS FIRST SERVER AS A BEGINNER BEFORE MOVING TO THE ASYNC/AWAIT VERSION BELOW
+  // --------------------------------------------
   // useEffect(() => {
   //   fetch("https://nodejs-production-7abc.up.railway.app")
   //     .then((res) => res.text())
@@ -15,6 +17,8 @@ function App() {
 
   // ======================================================== 
 
+  // ASYNC/AWAIT VERSION WITH LOCAL + PROD SERVER TESTING (ADVANCED BEGINNER)
+  // --------------------------------------------
   useEffect(() => {
     async function getData() {
       const prodURL = "https://nodejs-production-7abc.up.railway.app";
