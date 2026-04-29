@@ -9,7 +9,7 @@ function App() {
   // UNCOMMENT THIS & TEST THIS FIRST SERVER AS A BEGINNER BEFORE MOVING TO THE ASYNC/AWAIT VERSION BELOW
   // --------------------------------------------
   // useEffect(() => {
-  //   fetch("https://nodejs-production-7abc.up.railway.app")
+    // fetch("https://nodejs-production-7abc.up.railway.app")                           // CHANGE THIS TO YOUR LOCAL SERVER URL IF TESTING LOCALLY
   //     .then((res) => res.text())
   //     .then((data) => setServerMsg(data))
   //     .catch((err) => console.error("Error:", err));
@@ -21,7 +21,7 @@ function App() {
   // --------------------------------------------
   useEffect(() => {
     async function getData() {
-      const prodURL = "https://nodejs-production-7abc.up.railway.app";
+      const prodURL = "https://nodejs-production-7abc.up.railway.app";                  // YOUR DEPLOYED SERVER URL
       const localURL = "http://localhost:5000";
 
       try {

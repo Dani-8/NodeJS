@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { Link } from "react-router-dom"
 import { FileCode } from "lucide-react"
 import codeFiles from "./codeFiles"
 
@@ -7,20 +8,22 @@ export default function CodeExplorer() {
     const [selectedFile, setSelectedFile] = useState("server.js")
 
     return (
-        <section className="p-6 md:p-10 bg-rose-300 min-h-screen font-sans">
-            <div className="flex md:flex-row flex-col h-[calc(100vh-100px)] w-full border rounded-xl overflow-hidden bg-slate-900 shadow-2xl">
+        <section className="p-6 md:px-10 min-h-screen">
+            <Link to="/" className="mb-5 inline-block text-emerald-500 underline hover:text-rose-500 transition-colors">
+                Back to Home
+            </Link>
+
+
+            <div className="flex md:flex-row flex-col h-[calc(100vh-100px)] w-full border rounded-3xl overflow-hidden bg-slate-900 shadow-2xl">
                 {/* Sidebar */}
                 <div className="w-full md:w-64 bg-slate-800 border-r border-slate-700 p-6">
                     <h3 className="text-slate-400 text-xs font-bold uppercase tracking-widest mb-4">Project Files</h3>
 
-                    <div className="space-y-1">
+                    <div className="space-y-2">
                         {Object.keys(codeFiles).map(fileName => (
                             <button key={fileName}  onClick={() => setSelectedFile(fileName)}
                                 className={`w-full text-left px-3 py-2 rounded-md flex items-center gap-2 transition-colors ${selectedFile === fileName
-                                    ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30'
-                                    : 'text-slate-400 hover:bg-slate-700'
-                                    }`}
-                            >
+                                    ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30' : 'text-slate-400 hover:bg-slate-700' }`}>
                                 <FileCode size={16} />
                                 <span className="text-sm truncate">{fileName}</span>
                             </button>
@@ -36,7 +39,7 @@ export default function CodeExplorer() {
                         <span className="text-emerald-500 uppercase font-bold">Read Only</span>
                     </div>
 
-                    <pre className="flex-1 p-6 overflow-auto font-mono text-sm text-slate-300 bg-slate-950 leading-relaxed">
+                    <pre className="flex-1 p-6 overflow-auto font-mono text-xs text-slate-300 bg-slate-950 leading-relaxed">
                         <code>{codeFiles[selectedFile]}</code>
                     </pre>
                 </div>
