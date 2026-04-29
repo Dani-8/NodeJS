@@ -61,7 +61,7 @@ function App() {
       </div>
 
 
-      <div className="mt-55 text-center">
+      <div className="mt-55 text-center flex items-center justify-center gap-6">
         <Link to="/guide" className="text-emerald-500 underline hover:text-rose-500 transition-colors">
           Go to the Full-Stack Guide
         </Link>

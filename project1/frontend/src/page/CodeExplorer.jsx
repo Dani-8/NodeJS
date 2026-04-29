@@ -1,5 +1,10 @@
-const CodeExplorer = () => {
-    const [selectedFile, setSelectedFile] = useState("server.js");
+import { useState } from "react"
+import { FileCode } from "lucide-react"
+import codeFiles from "./codeFiles"
+
+
+export default function CodeExplorer() {
+    const [selectedFile, setSelectedFile] = useState("server.js")
 
     return (
         <div className="flex h-[calc(100vh-120px)] border rounded-xl overflow-hidden bg-slate-900 shadow-2xl">
@@ -23,12 +28,14 @@ const CodeExplorer = () => {
                 </div>
             </div>
 
+
             {/* Editor Area */}
             <div className="flex-1 flex flex-col overflow-hidden">
                 <div className="bg-slate-800 px-4 py-2 text-xs text-slate-400 border-b border-slate-700 flex justify-between items-center">
                     <span>{selectedFile}</span>
                     <span className="text-emerald-500 uppercase font-bold">Read Only</span>
                 </div>
+
                 <pre className="flex-1 p-6 overflow-auto font-mono text-sm text-slate-300 bg-slate-950 leading-relaxed">
                     <code>{codeFiles[selectedFile]}</code>
                 </pre>
