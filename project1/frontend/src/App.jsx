@@ -1,4 +1,5 @@
 import Guide from "./components/Guide";
+import Guide from "./components/Guide";
 import { useState, useEffect } from "react"
 import { Link } from "react-router-dom";
 
@@ -60,6 +61,11 @@ function App() {
         <Link to="/guide" className="text-emerald-500 underline hover:text-rose-500 transition-colors">
           Go to the Full-Stack Guide
         </Link>
+        
+        <Link to="/codeexplorer" className="text-emerald-500 underline hover:text-rose-500 transition-colors">
+          Go to the Code Explorer
+        </Link>
+
       </div>
     </>
   );
