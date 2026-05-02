@@ -7,6 +7,17 @@ function App() {
           This is the second project with backend!!!
         </p>
       </div>
+
+      <div className="flex items-center justify-center mt-10">
+        <a
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-blue-500 hover:underline text-lg"
+        >
+          Learn React
+        </a>
+      </div>
     </>
   )
 }
