@@ -11,7 +11,7 @@ export default function Header({recipes, liveServer}) {
                     <h1 className="text-5xl font-black tracking-tight text-slate-900">
                         Kitchen<span className="text-emerald-500">Vault</span>
                     </h1>
-                    <p className="text-slate-500 font-medium">Your personal full-stack recipe repository.</p>
+                    <p className="text-slate-500 font-medium">Personal full-stack recipe manager.</p>
                 </div>
 
 

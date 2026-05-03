@@ -29,13 +29,14 @@ export default function RecipeList({recipes, loading, deleteRecipe}) {
                                         <div className="p-3 bg-slate-50 rounded-2xl group-hover:bg-white transition-colors">
                                             <ChefHat className="text-slate-400 group-hover:text-emerald-500" size={24} />
                                         </div>
-                                        <button
-                                            onClick={() => deleteRecipe(recipe.id)}
+
+                                        <button onClick={() => deleteRecipe(recipe.id)}
                                             className="p-2 cursor-pointer text-slate-300 hover:text-rose-500 hover:bg-rose-50 rounded-xl transition-all duration-300 active:scale-80"
                                         >
                                             <Trash2 size={20} />
                                         </button>
                                     </div>
+
 
                                     <h3 className="text-xl font-black text-slate-800 mb-2 group-hover:text-emerald-600 transition-colors">
                                         {recipe.title}
@@ -44,6 +45,7 @@ export default function RecipeList({recipes, loading, deleteRecipe}) {
                                     <p className="text-sm text-slate-500 leading-relaxed line-clamp-3">
                                         {recipe.ingredients || "No ingredients listed yet."}
                                     </p>
+                                    
 
                                     <div className="mt-6 flex items-center gap-4 text-[10px] font-black uppercase tracking-tighter text-slate-400">
                                         <span className="flex items-center gap-1"><Clock size={12} /> 15 Min</span>
