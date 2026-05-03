@@ -22,7 +22,7 @@ Key highlights:
 - Client-side state management with React Hooks
 - In-memory server state for rapid development and prototyping
 
-Live demo: https://node-js-black-xi.vercel.app/
+[Live Demo:](https://node-js-black-xi.vercel.app/)
 
 
 ### 2. Project 02 — KitchenVault
@@ -34,7 +34,7 @@ Key highlights:
 - Backend logic explorer for application structure
 - Designed for regional flavor and UX clarity
 
-Live demo: https://node-js-kn2n.vercel.app/
+[Live Demo:](https://node-js-kn2n.vercel.app/)
 
 ---
 
