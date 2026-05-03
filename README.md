@@ -13,14 +13,14 @@ This repository contains independent frontend and backend implementations for ea
 
 ## 🚀 Projects Included
 
-### 1. Project 01 — Task Manager
-A task management application focused on REST fundamentals, HTTP verb usage, and client-server synchronization.
+### 1. Project 01 — Connect Backend with Frontend
+A beginner-friendly full-stack starter app that proves the client and server are connected and working together.
 
 Key highlights:
-- Create, read, update, delete tasks
-- RESTful API endpoints using Express
-- Client-side state management with React Hooks
-- In-memory server state for rapid development and prototyping
+- Node.js + Express server returning JSON from `/`
+- React frontend fetching from local and deployed endpoints
+- Automatic fallback between local and production server URLs
+- Includes beginner guidance and a code explorer UI for learning full-stack flow
 
 [Live Demo:](https://node-js-black-xi.vercel.app/)
 

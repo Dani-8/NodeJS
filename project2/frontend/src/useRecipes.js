@@ -7,19 +7,28 @@ export const useRecipes = () => {
     // =====================================================================================
 
     const [liveServer, setLiveServer] = useState(false)
+    const [serverName, setServerName] = useState(null)
 
     useEffect(() => {
         // Check if the backend server is live by making a simple GET request
         const checkServer = async () => {
             try {
-                const res = await fetch(API_URL)
-                if (res.ok) {
+                const resLocal = await fetch(API_URL).catch(() => null)
+                const resProd = await fetch(PROD_API_URL).catch(() => null)
+
+                if (resLocal?.ok) {
                     setLiveServer(true)
+                    setServerName("Local")
+                } else if (resProd?.ok) {
+                    setLiveServer(true)
+                    setServerName("Production")
                 } else {
                     setLiveServer(false)
+                    setServerName(null)
                 }
             } catch (err) {
                 setLiveServer(false)
+                setServerName(null)
             }
         }
 
@@ -57,7 +66,7 @@ export const useRecipes = () => {
                 console.log("Trying PROD Server...");
                 const res = await fetch(PROD_API_URL)
                 if (!res.ok) throw new Error("Server connection lost - failed to fetch recipes.")
-                    
+
                 const data = await res.json()
                 setRecipes(data)
                 console.log("PROD Server worked")
@@ -108,7 +117,7 @@ export const useRecipes = () => {
             setError("Failed to add recipe - It seems the server is down. Please try again later.")
         }
     }
-    
+
 
 
     // Now Let's implement the deleteRecipe function to remove recipes from the Server
@@ -127,6 +136,6 @@ export const useRecipes = () => {
 
     return {
         recipes, name, setName, ingredients, setIngredients,
-        loading, error, liveServer, addRecipe, deleteRecipe, fetchRecipes
+        loading, error, liveServer, serverName, addRecipe, deleteRecipe, fetchRecipes
     }
 }

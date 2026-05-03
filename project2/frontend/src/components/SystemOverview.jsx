@@ -24,11 +24,13 @@ export default function SystemOverview({ setActiveTab }) {
                             <h4 className="font-bold text-sm uppercase mb-1">Server</h4>
                             <p className="text-xs text-slate-600 leading-relaxed text-balance">Express.js running on Port 5000, listening for HTTP requests.</p>
                         </div>
+                        
                         <div className="p-6 bg-emerald-50 rounded-[2rem] border border-emerald-100">
                             <Cpu className="text-emerald-500 mb-3" size={24} />
                             <h4 className="font-bold text-sm uppercase mb-1">Routes</h4>
                             <p className="text-xs text-slate-600 leading-relaxed text-balance">Defined endpoints like /tasks that map actions to logic.</p>
                         </div>
+                        
                         <div className="p-6 bg-blue-50 rounded-[2rem] border border-blue-100">
                             <Database className="text-blue-500 mb-3" size={24} />
                             <h4 className="font-bold text-sm uppercase mb-1">State</h4>
@@ -43,7 +45,7 @@ export default function SystemOverview({ setActiveTab }) {
                             <div className="mb-4 pb-4 border-b border-slate-800">
                                 <span className="text-rose-400 font-bold">GET</span> /tasks <span className="text-slate-500 ml-4">// Returns all recipes</span>
                             </div>
-                            
+
                             <div className="mb-4 pb-4 border-b border-slate-800">
                                 <span className="text-blue-400 font-bold">POST</span> /tasks <span className="text-slate-500 ml-4">// Creates new recipe object</span>
                             </div>

@@ -12,7 +12,7 @@ import { useRecipes } from "./useRecipes"
 function App() {
   const {
     recipes, name, setName, ingredients, setIngredients,
-    loading, error, liveServer, addRecipe, deleteRecipe, fetchRecipes
+    loading, error, liveServer, serverName, addRecipe, deleteRecipe, fetchRecipes
   } = useRecipes()
 
   const [activeTab, setActiveTab] = useState("vault"); // "vault", "explorer"
@@ -23,7 +23,6 @@ function App() {
       <div className="min-h-screen bg-gradient-to-br from-[#fff5f5] via-white to-[#f0fdf4] p-4 md:p-8 font-sans text-slate-800">
         <div className="max-w-6xl mx-auto">
 
-          {/* Navigation Bar */}
           <nav className="flex flex-wrap items-center justify-center gap-4 mb-6">
             <div className="flex bg-white/80 backdrop-blur-md p-1.5 rounded-2xl border border-slate-100 shadow-sm gap-1">
               <button onClick={() => setActiveTab('vault')}
@@ -43,7 +42,7 @@ function App() {
 
           {activeTab === 'vault' ? (
             <>
-              <Header recipes={recipes} liveServer={liveServer} />
+              <Header recipes={recipes} liveServer={liveServer} serverName={serverName} />
 
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-15">
                 <Sidebar
