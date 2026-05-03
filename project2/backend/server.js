@@ -8,7 +8,7 @@ app.use(cors())
 app.use(express.json())
 // ============================================
 
-// Pre-filled Karachi Favorites
+// Pre-filled
 let recipes = [
   { 
     id: 1, 
@@ -28,12 +28,19 @@ let recipes = [
 ]
 // ============================================
 
-
-app.get('/', (req, res) => {
-  res.json({ message: 'Hello from Node.js + Express server!' });
+// GET: Fetch all recipes
+app.get('/tasks', (req, res) => {
+  res.json(recipes);
 })
 
 
+// POST: Add a new recipe
+
+
+
+
+
+
 app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
+  console.log(`KitchenVault running at http://localhost:${PORT}`)
 })
