@@ -10,11 +10,13 @@ export default function SystemOverview({ setActiveTab }) {
                         <div className="p-3 bg-emerald-500 text-white rounded-2xl">
                             <Code2 size={24} />
                         </div>
+
                         <div>
                             <h2 className="text-3xl font-black">Backend Logic</h2>
                             <p className="text-slate-500">How KitchenVault processes your requests</p>
                         </div>
                     </div>
+
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
                         <div className="p-6 bg-rose-50 rounded-[2rem] border border-rose-100">
@@ -34,20 +36,24 @@ export default function SystemOverview({ setActiveTab }) {
                         </div>
                     </div>
 
+
                     <div className="space-y-4">
                         <h3 className="text-lg font-bold px-2">API Documentation</h3>
                         <div className="overflow-hidden rounded-3xl border border-slate-100 bg-slate-900 p-6 font-mono text-sm text-emerald-400">
                             <div className="mb-4 pb-4 border-b border-slate-800">
                                 <span className="text-rose-400 font-bold">GET</span> /tasks <span className="text-slate-500 ml-4">// Returns all recipes</span>
                             </div>
+                            
                             <div className="mb-4 pb-4 border-b border-slate-800">
                                 <span className="text-blue-400 font-bold">POST</span> /tasks <span className="text-slate-500 ml-4">// Creates new recipe object</span>
                             </div>
+
                             <div>
                                 <span className="text-orange-400 font-bold">DELETE</span> /tasks/:id <span className="text-slate-500 ml-4">// Removes specific ID</span>
                             </div>
                         </div>
                     </div>
+
 
                     <button onClick={() => setActiveTab('vault')} className="mt-8 flex items-center gap-2 text-emerald-600 font-bold hover:underline">
                         <ChevronLeft size={20} /> Back to Recipe Vault

@@ -29,7 +29,7 @@ function App() {
               <button onClick={() => setActiveTab('vault')}
                 className={`cursor-pointer px-4 py-2 rounded-xl text-xs font-bold transition-all ${activeTab === 'vault' ? 'bg-slate-900 text-white' : 'text-slate-400 hover:text-slate-600'}`}
               >
-                Vault
+                Kitchen Vault
               </button>
 
               <button onClick={() => setActiveTab('explorer')}
