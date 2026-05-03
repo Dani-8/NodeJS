@@ -39,11 +39,11 @@ function App() {
   return (
     <>
       <div className="min-h-screen bg-gradient-to-br from-[#fff5f5] via-white to-[#f0fdf4] p-4 md:p-12 font-sans text-slate-800">
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-6xl mx-auto">
 
           <Header recipes={recipes} />
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-15">
             <Sidebar />
 
             <RecipeList recipes={recipes} />

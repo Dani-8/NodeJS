@@ -31,7 +31,7 @@ export default function RecipeList({recipes, loading, deleteRecipe}) {
                                         </div>
                                         <button
                                             onClick={() => deleteRecipe(recipe.id)}
-                                            className="p-2 text-slate-300 hover:text-rose-500 hover:bg-rose-50 rounded-xl transition-all"
+                                            className="p-2 cursor-pointer text-slate-300 hover:text-rose-500 hover:bg-rose-50 rounded-xl transition-all duration-300 active:scale-80"
                                         >
                                             <Trash2 size={20} />
                                         </button>
