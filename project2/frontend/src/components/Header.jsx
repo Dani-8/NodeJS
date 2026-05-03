@@ -5,8 +5,8 @@ export default function Header({recipes}) {
         <>
             <header className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
                 <div className="space-y-2">
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-100 text-rose-600 text-xs font-bold uppercase tracking-widest">
-                        <Flame size={14} className="animate-pulse" /> Chef Mode Active
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-100 text-rose-600 text-[10px] font-bold uppercase tracking-widest">
+                        <Flame size={13} className="animate-pulse" /> Chef Mode Active
                     </div>
                     <h1 className="text-5xl font-black tracking-tight text-slate-900">
                         Kitchen<span className="text-emerald-500">Vault</span>

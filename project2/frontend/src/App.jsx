@@ -13,6 +13,7 @@ function App() {
 
   const API_URL = "http://localhost:5000/tasks" // Using the new endpoint
 
+  // Let's implement the fetchRecipes function to get recipes from the Server
   const fetchRecipes = async() => {
     try{
       setLoading(true)
@@ -25,7 +26,7 @@ function App() {
       
       setError(null)
     } catch (err) {
-      setError("Failed to fetch recipes - It seems the server is down. Please try again later." + err.message)
+      setError("Failed to fetch recipes - It seems the server is down. Please try again later.")
     } finally {
       setLoading(false)
     }
@@ -36,6 +37,26 @@ function App() {
   }, [])
 
 
+  // Now let's implement the addRecipe function to send new recipes to the Server
+  const addRecipes = async(e) => {
+    e.preventDefault()
+
+    if(!name.trim() || !ingredients.trim()) {
+      setError("Please fill in all fields.")
+      return
+    }
+    setError(null)
+    // ------------------------
+
+    
+
+
+  }
+
+
+
+
+
   return (
     <>
       <div className="min-h-screen bg-gradient-to-br from-[#fff5f5] via-white to-[#f0fdf4] p-4 md:p-12 font-sans text-slate-800">
@@ -44,7 +65,15 @@ function App() {
           <Header recipes={recipes} />
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-15">
-            <Sidebar />
+            <Sidebar 
+              // addRecipe={addRecipe}
+              // name={name}
+              // setName={setName}
+              // ingredients={ingredients}
+              // setIngredients={setIngredients}
+              error={error}
+              fetchRecipes={fetchRecipes}
+            />
 
             <RecipeList recipes={recipes} />
           </div>
