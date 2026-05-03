@@ -1,6 +1,6 @@
 import { Flame } from 'lucide-react'
 
-export default function Header({recipes}) {
+export default function Header(recipes) {
     return (
         <>
             <header className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
@@ -17,7 +17,7 @@ export default function Header({recipes}) {
 
                 <div className="flex gap-4">
                     <div className="bg-white p-4 rounded-2xl shadow-sm border border-slate-100 flex flex-col items-center min-w-[100px]">
-                        <span className="text-2xl font-black text-emerald-500">{recipes}</span>
+                        <span className="text-2xl font-black text-emerald-500">{recipes.length}</span>
                         <span className="text-[10px] text-slate-400 uppercase font-bold">Recipes</span>
                     </div>
 
