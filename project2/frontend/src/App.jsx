@@ -48,9 +48,35 @@ function App() {
     setError(null)
     // ------------------------
 
-    
+    try{
+      const res = await fetch(API_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({title: name, ingredients: ingredients})
+      })
+
+      const newRecipes = await res.json()
+
+      setRecipes(prev => [...prev, newRecipes])
+      setName("")
+      setIngredients("")
+    }catch(err){
+      setError("Failed to add recipe - It seems the server is down. Please try again later.")
+    }
+  }
 
 
+  // Now Let's implement the deleteRecipe function to remove recipes from the Server
+  const deleteRecipe = async(id) => {
+    try{
+      await fetch(`${API_URL}/${id}`, {
+        method: "DELETE"
+      })
+
+      setRecipes(prev => prev.filter(recipe => recipe.id !== id))
+    }catch(err){
+      setError("Failed to delete recipe - It seems the server is down. Please try again later.")
+    }
   }
 
 
