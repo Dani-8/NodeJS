@@ -1,6 +1,6 @@
 import { BookOpen, ChevronLeft, Code2, Cpu, Database, Server } from 'lucide-react'
 
-export default function CodeExplorer({ setActiveTab }) {
+export default function SystemOverview({ setActiveTab }) {
 
     return (
         <>

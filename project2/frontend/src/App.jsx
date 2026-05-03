@@ -4,7 +4,7 @@ import { Code2, BookOpen, ChevronLeft } from 'lucide-react'
 import Header from "./components/Header"
 import Sidebar from "./components/Sidebar"
 import RecipeList from "./components/RecipeList"
-import CodeExplorer from "./components/CodeExplorer"
+import SystemOverview from "./components/SystemOverview"
 
 import { useRecipes } from "./useRecipes"
 // ===============================================
@@ -24,7 +24,7 @@ function App() {
         <div className="max-w-6xl mx-auto">
 
           {/* Navigation Bar */}
-          <nav className="flex flex-wrap items-center justify-center gap-4 mb-8">
+          <nav className="flex flex-wrap items-center justify-center gap-4 mb-6">
             <div className="flex bg-white/80 backdrop-blur-md p-1.5 rounded-2xl border border-slate-100 shadow-sm gap-1">
               <button onClick={() => setActiveTab('vault')}
                 className={`cursor-pointer px-4 py-2 rounded-xl text-xs font-bold transition-all ${activeTab === 'vault' ? 'bg-slate-900 text-white' : 'text-slate-400 hover:text-slate-600'}`}
@@ -35,7 +35,7 @@ function App() {
               <button onClick={() => setActiveTab('explorer')}
                 className={`cursor-pointer flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold transition-all ${activeTab === 'explorer' ? 'bg-slate-900 text-white' : 'text-slate-400 hover:text-slate-600'}`}
               >
-                <Code2 size={14} /> Code Explorer
+                <Code2 size={14} /> System Overview
               </button>
             </div>
           </nav>
@@ -64,7 +64,7 @@ function App() {
               </div>
             </>
             ) : activeTab === 'explorer' ? (
-              <CodeExplorer setActiveTab={setActiveTab} />
+              <SystemOverview setActiveTab={setActiveTab} />
             ) : null}
 
         </div>

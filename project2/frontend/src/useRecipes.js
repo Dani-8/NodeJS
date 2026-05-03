@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 
 export const useRecipes = () => {
     const API_URL = "http://localhost:5000/tasks" // Using the new endpoint
+    const PROD_API_URL = "https://nodejs-production-1eeb.up.railway.app/tasks" // Your deployed server URL
 
     // =====================================================================================
 
@@ -26,6 +27,7 @@ export const useRecipes = () => {
     }, [])
 
     // =====================================================================================
+    // =====================================================================================
 
     const [recipes, setRecipes] = useState([])
     const [name, setName] = useState("")
@@ -38,15 +40,33 @@ export const useRecipes = () => {
         try {
             setLoading(true)
 
+            console.log("Trying LOCAL Server...");
             const res = await fetch(API_URL)
             if (!res.ok) throw new Error("Server connection lost - failed to fetch recipes.")
 
             const data = await res.json()
             setRecipes(data)
+            console.log("LOCAL Server worked")
 
             setError(null)
         } catch (err) {
             setError("Failed to fetch recipes - It seems the server is down. Please try again later.")
+            console.log("LOCAL Server failed...")
+
+            try {
+                console.log("Trying PROD Server...");
+                const res = await fetch(PROD_API_URL)
+                if (!res.ok) throw new Error("Server connection lost - failed to fetch recipes.")
+                    
+                const data = await res.json()
+                setRecipes(data)
+                console.log("PROD Server worked")
+
+                setError(null)
+            } catch (err) {
+                setError("Failed to fetch recipes - It seems the server is down. Please try again later.")
+                console.log("Both Servers failed...")
+            }
         } finally {
             setLoading(false)
         }
@@ -56,6 +76,9 @@ export const useRecipes = () => {
         fetchRecipes()
     }, [])
 
+    // ===============================================================================================================
+    // ===============================================================================================================
+    // ===============================================================================================================
 
 
     // Now let's implement the addRecipe function to send new recipes to the Server
