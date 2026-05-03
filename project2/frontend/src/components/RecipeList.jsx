@@ -1,13 +1,40 @@
+import { useEffect, useState } from 'react'
 import { ChefHat, Clock, Trash2, UtensilsCrossed } from 'lucide-react'
 
-export default function RecipeList({recipes, loading, deleteRecipe}) {
+export default function RecipeList({ recipes, loading, deleteRecipe }) {
+    const initialPlaceholderColors = ['bg-rose-50', 'bg-emerald-50', 'bg-rose-50', 'bg-emerald-50', 'bg-rose-50']
+
+    const shuffle = (arr) => {
+        const copy = [...arr]
+        
+        for (let i = copy.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1))
+                ;[copy[i], copy[j]] = [copy[j], copy[i]]
+        }
+
+        return copy
+    }
+
+    const [shuffledPlaceholderColors, setShuffledPlaceholderColors] = useState(() =>
+        shuffle(initialPlaceholderColors)
+    )
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setShuffledPlaceholderColors(shuffle(initialPlaceholderColors))
+        }, 400)
+
+        return () => clearInterval(interval)
+    }, [])
+
+
     return (
         <>
             <div className="lg:col-span-8">
                 {loading ? (
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         {[1, 2, 3, 4].map(i => (
-                            <div key={i} className="h-48 bg-slate-100 animate-pulse rounded-[2rem]"></div>
+                            <div key={i} className={`h-48 animate-pulse rounded-[2rem] transition-colors duration-200 ease-out ${shuffledPlaceholderColors[i]}`}></div>
                         ))}
                     </div>
                 ) : recipes.length === 0 ? (
@@ -20,7 +47,7 @@ export default function RecipeList({recipes, loading, deleteRecipe}) {
                         {recipes.map((recipe) => (
                             <div
                                 key={recipe.id}
-                                className="group bg-white p-6 rounded-[2rem] border border-slate-50 shadow-sm hover:shadow-2xl hover:shadow-emerald-100/50 hover:-translate-y-1 transition-all duration-300 relative overflow-hidden"
+                                className="group bg-white p-6 rounded-[2rem] border border-slate-50 shadow-sm hover:shadow-2xl hover:shadow-emerald-100/70 hover:-translate-y-1 transition-all duration-300 relative overflow-hidden"
                             >
                                 <div className="absolute top-0 right-0 w-24 h-24 bg-rose-50 rounded-bl-[4rem] -mr-12 -mt-12 group-hover:bg-emerald-50 transition-colors"></div>
 
@@ -45,7 +72,7 @@ export default function RecipeList({recipes, loading, deleteRecipe}) {
                                     <p className="text-sm text-slate-500 leading-relaxed line-clamp-3">
                                         {recipe.ingredients || "No ingredients listed yet."}
                                     </p>
-                                    
+
 
                                     <div className="mt-6 flex items-center gap-4 text-[10px] font-black uppercase tracking-tighter text-slate-400">
                                         <span className="flex items-center gap-1"><Clock size={12} /> 15 Min</span>
