@@ -3,6 +3,8 @@ import React, { useState, useEffect } from 'react'
 export const useRecipes = () => {
     const API_URL = "http://localhost:5000/tasks" // Using the new endpoint
 
+    // =====================================================================================
+
     const [liveServer, setLiveServer] = useState(false)
 
     useEffect(() => {
@@ -23,6 +25,7 @@ export const useRecipes = () => {
         checkServer()
     }, [])
 
+    // =====================================================================================
 
     const [recipes, setRecipes] = useState([])
     const [name, setName] = useState("")
@@ -54,6 +57,7 @@ export const useRecipes = () => {
     }, [])
 
 
+
     // Now let's implement the addRecipe function to send new recipes to the Server
     const addRecipe = async (e) => {
         e.preventDefault()
@@ -81,6 +85,7 @@ export const useRecipes = () => {
             setError("Failed to add recipe - It seems the server is down. Please try again later.")
         }
     }
+    
 
 
     // Now Let's implement the deleteRecipe function to remove recipes from the Server
