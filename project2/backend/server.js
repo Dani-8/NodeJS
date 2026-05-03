@@ -31,6 +31,7 @@ let recipes = [
 // GET: Fetch all recipes
 app.get('/tasks', (req, res) => {
   res.json(recipes);
+
 })
 
 
@@ -48,7 +49,13 @@ app.post('/tasks', (req, res) => {
 
 
 // DELETE: Remove a recipe by ID
+app.delete('/tasks/:id', (req, res) => {
+  const id =  parseInt(req.params.id)
 
+  recipes = recipes.filter(recipes => recipes.id !== id)
+
+  res.json({message: "Recipe deleted successfully" })
+})
 
 
 
