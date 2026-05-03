@@ -35,7 +35,19 @@ app.get('/tasks', (req, res) => {
 
 
 // POST: Add a new recipe
+app.post('/tasks', (req, res) => {
+  const newRecipe = {
+    id: Date.now(),
+    title: req.body.title,
+    ingredients: req.body.ingredients
+  }
 
+  recipes.push(newRecipe)
+  res.status(201).json(newRecipe)
+})
+
+
+// DELETE: Remove a recipe by ID
 
 
 

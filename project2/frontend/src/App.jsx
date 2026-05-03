@@ -3,15 +3,37 @@ import Sidebar from "./components/Sidebar"
 import RecipeList from "./components/RecipeList"
 
 import React, { useState, useEffect } from 'react'
+// ===============================================
 
 function App() {
+  const API_URL = "http://localhost:5000/tasks" // Using the new endpoint
+
+  const [liveServer, setLiveServer] = useState(false)
+
+  useEffect(() => {
+    // Check if the backend server is live by making a simple GET request
+    const checkServer = async () => {
+      try {
+        const res = await fetch(API_URL)
+        if (res.ok) {
+          setLiveServer(true)
+        } else {
+          setLiveServer(false)
+        }
+      } catch (err) {
+        setLiveServer(false)
+      }
+    }
+
+    checkServer()
+  }, [])
+
+
   const [recipes, setRecipes] = useState([])
   const [name, setName] = useState("")
   const [ingredients, setIngredients] = useState("")
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
-
-  const API_URL = "http://localhost:5000/tasks" // Using the new endpoint
 
   // Let's implement the fetchRecipes function to get recipes from the Server
   const fetchRecipes = async() => {
@@ -38,7 +60,7 @@ function App() {
 
 
   // Now let's implement the addRecipe function to send new recipes to the Server
-  const addRecipes = async(e) => {
+  const addRecipe = async(e) => {
     e.preventDefault()
 
     if(!name.trim() || !ingredients.trim()) {
@@ -88,15 +110,15 @@ function App() {
       <div className="min-h-screen bg-gradient-to-br from-[#fff5f5] via-white to-[#f0fdf4] p-4 md:p-12 font-sans text-slate-800">
       <div className="max-w-6xl mx-auto">
 
-          <Header recipes={recipes} />
+          <Header recipes={recipes} liveServer={liveServer} />
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-15">
             <Sidebar 
-              // addRecipe={addRecipe}
-              // name={name}
-              // setName={setName}
-              // ingredients={ingredients}
-              // setIngredients={setIngredients}
+              addRecipe={addRecipe}
+              name={name}
+              setName={setName}
+              ingredients={ingredients}
+              setIngredients={setIngredients}
               error={error}
               fetchRecipes={fetchRecipes}
             />
