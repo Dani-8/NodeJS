@@ -57,6 +57,15 @@ app.delete('/tasks/:id', (req, res) => {
 })
 
 
+// PUT: Update a recipes by ID
+app.put('/tasks/:id', (req, res) => {
+  const id = parseInt(req.params.id)
+  const recipe = recipes.find(recipe => recipe.id === id)
+  
+
+
+})
+
 
 
 app.listen(PORT, () => {
