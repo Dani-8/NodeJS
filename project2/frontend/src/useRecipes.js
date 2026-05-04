@@ -37,12 +37,15 @@ export const useRecipes = () => {
 
     // =====================================================================================
     // =====================================================================================
+    
+    const [loading, setLoading] = useState(true)
+    const [error, setError] = useState(null)
 
     const [recipes, setRecipes] = useState([])
     const [name, setName] = useState("")
     const [ingredients, setIngredients] = useState("")
-    const [loading, setLoading] = useState(true)
-    const [error, setError] = useState(null)
+    const [editingId, setEditingId] = useState(null);
+
 
     // Let's implement the fetchRecipes function to get recipes from the Server
     const fetchRecipes = async () => {
@@ -136,12 +139,40 @@ export const useRecipes = () => {
 
 
     // Now let's implement the updateRecipe function to edit existing recipes on the Server
-    
+    const updateRecipe = async() => {
+        try{
+            const recipe = await fetch(`${API_URL}/${editingId}`, {
+                method: "PUT",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({title: name, ingredients: ingredients})
+            })
+            const updateRecipe = await recipe.json()
 
+            setRecipes(recipe => recipe.map(r => r.id === editingId ? updateRecipe : r))
+            resetForm()
+        }catch(err){
+            setError("Failed to update recipe - It seems the server is down. Please try again later.")
+        }
+    }
+
+
+    const startEditing = (recipe) => {
+        setEditingId(recipe.id)
+        setName(recipe.title)
+        setIngredients(recipe.ingredients)
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+
+    const resetForm = () => {
+        setEditingId(null)
+        setName("")
+        setIngredients("")
+    }
 
 
     return {
-        recipes, name, setName, ingredients, setIngredients,
+        recipes, name, setName, ingredients, setIngredients, editingId, setEditingId,
         loading, error, liveServer, serverName, addRecipe, deleteRecipe, fetchRecipes
     }
 }

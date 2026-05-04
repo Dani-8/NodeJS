@@ -1,13 +1,13 @@
 import { ChefHat, Plus, AlertCircle, RefreshCw } from 'lucide-react'
 
-export default function Sidebar({ addRecipe, name, setName, ingredients, setIngredients, error, fetchRecipes }) {
+export default function Sidebar({ addRecipe, name, setName, ingredients, setIngredients, editingId, setEditingId, error, fetchRecipes }) {
     return (
         <>
             <div className="lg:col-span-4">
                 <div className="bg-white/70 backdrop-blur-xl p-8 rounded-[2rem] border border-rose-100 shadow-2xl shadow-rose-100 sticky top-12">
                     <div className="flex items-center gap-3 mb-6">
                         <ChefHat className="text-rose-500" />
-                        <h2 className="text-xl font-bold">Create New</h2>
+                        <h2 className="text-xl font-bold">{editingId ? 'Edit Recipe' : 'Create New Recipe'}</h2>
                     </div>
 
                     <form onSubmit={addRecipe} className="space-y-4">

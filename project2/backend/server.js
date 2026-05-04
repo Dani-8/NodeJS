@@ -63,7 +63,12 @@ app.put('/tasks/:id', (req, res) => {
   const recipe = recipes.find(recipe => recipe.id === id)
 
   if(recipe){
-    
+    recipe.title = req.body.title || recipe.title
+    recipe.ingredients = req.body.ingredients || recipe.ingredients
+
+    res.json({ message: "Recipe updated successfully", recipe })
+  }else{
+    res.status(404).json({ message: "Recipe not found" });
   }
 
 })

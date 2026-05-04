@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { ChefHat, Clock, Trash2, UtensilsCrossed } from 'lucide-react'
 
-export default function RecipeList({ recipes, loading, deleteRecipe }) {
+export default function RecipeList({ recipes, loading, deleteRecipe, editingId, setEditingId }) {
     const initialPlaceholderColors = ['bg-rose-50', 'bg-emerald-50', 'bg-rose-50', 'bg-emerald-50', 'bg-rose-50']
 
     const shuffle = (arr) => {
