@@ -8,9 +8,9 @@ function App() {
 
   return (
     <>
-      <div className="min-h-screen bg-rose-50/80 font-sans text-slate-900">
+      <div className="min-h-screen bg-sky-100 font-sans text-slate-900">
 
-        <main className="max-w-7xl mx-auto p-6">
+        <main className="max-w-7xl mx-auto p-10 py-16">
             <div className="grid grid-cols-1 md:grid-cols-12 gap-10">
               {/* Form */}
               <div className="md:col-span-5">
