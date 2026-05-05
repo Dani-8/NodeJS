@@ -8,6 +8,7 @@ export const useRecipes = () => {
 
     const [liveServer, setLiveServer] = useState(false)
     const [serverName, setServerName] = useState(null)
+    const [currentAPI, setCurrentAPI] = useState(API_URL) // Default to local, will be updated based on availability
 
     useEffect(() => {
         // Check if the backend server is live by making a simple GET request
@@ -19,16 +20,20 @@ export const useRecipes = () => {
                 if (resLocal?.ok) {
                     setLiveServer(true)
                     setServerName("Local")
+                    setCurrentAPI(API_URL)
                 } else if (resProd?.ok) {
                     setLiveServer(true)
                     setServerName("Production")
+                    setCurrentAPI(PROD_API_URL)
                 } else {
                     setLiveServer(false)
                     setServerName(null)
+                    setCurrentAPI(API_URL) // Default back to local
                 }
             } catch (err) {
                 setLiveServer(false)
                 setServerName(null)
+                setCurrentAPI(API_URL)
             }
         }
 
@@ -58,6 +63,7 @@ export const useRecipes = () => {
 
             const data = await res.json()
             setRecipes(data)
+            setCurrentAPI(API_URL) // Set to local since it worked
             console.log("LOCAL Server worked")
 
             setError(null)
@@ -72,6 +78,7 @@ export const useRecipes = () => {
 
                 const data = await res.json()
                 setRecipes(data)
+                setCurrentAPI(PROD_API_URL) // Set to prod since local failed but prod worked
                 console.log("PROD Server worked")
 
                 setError(null)
@@ -103,7 +110,7 @@ export const useRecipes = () => {
         // ------------------------
 
         try {
-            const res = await fetch(API_URL, {
+            const res = await fetch(currentAPI, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ title: name, ingredients: ingredients })
@@ -124,7 +131,7 @@ export const useRecipes = () => {
     // Now Let's implement the deleteRecipe function to remove recipes from the Server
     const deleteRecipe = async (id) => {
         try {
-            await fetch(`${API_URL}/${id}`, {
+            await fetch(`${currentAPI}/${id}`, {
                 method: "DELETE"
             })
 
@@ -139,7 +146,7 @@ export const useRecipes = () => {
     // Now let's implement the updateRecipe function to edit existing recipes on the Server
     const updateRecipe = async() => {
         try{
-            const recipe = await fetch(`${API_URL}/${editingId}`, {
+            const recipe = await fetch(`${currentAPI}/${editingId}`, {
                 method: "PUT",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({title: name, ingredients: ingredients})
