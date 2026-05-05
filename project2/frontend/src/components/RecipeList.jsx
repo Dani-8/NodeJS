@@ -47,14 +47,14 @@ export default function RecipeList({ recipes, loading, deleteRecipe, editingId, 
                         {recipes.map((recipe) => (
                             <div
                                 key={recipe.id}
-                                className="group bg-white p-6 rounded-[2rem] border border-slate-50 shadow-sm hover:shadow-2xl hover:shadow-emerald-100/70 hover:-translate-y-1 transition-all duration-300 relative overflow-hidden"
+                                className={`group bg-white p-6 rounded-[2rem] border shadow-sm hover:shadow-2xl transition-all duration-300 relative overflow-hidden ${editingId === recipe.id ? 'ring-2 ring-amber-400 border-amber-200' : 'border-slate-50 hover:shadow-emerald-100/50 hover:-translate-y-1'}`}
                             >
-                                <div className="absolute top-0 right-0 w-24 h-24 bg-rose-50 rounded-bl-[4rem] -mr-12 -mt-12 group-hover:bg-emerald-50 transition-colors"></div>
+                                <div className={`absolute top-0 right-0 w-24 h-24 rounded-bl-[4rem] -mr-12 -mt-12 transition-colors ${editingId === recipe.id ? 'bg-amber-50' : 'bg-rose-50 group-hover:bg-emerald-50'}`}></div>
 
                                 <div className="relative z-10">
                                     <div className="flex justify-between items-start mb-4">
-                                        <div className="p-3 bg-slate-50 rounded-2xl group-hover:bg-white transition-colors">
-                                            <ChefHat className="text-slate-400 group-hover:text-emerald-500" size={24} />
+                                        <div className={`p-3 rounded-2xl transition-colors ${editingId === recipe.id ? 'bg-amber-100' : 'bg-slate-50 group-hover:bg-white'}`}>
+                                            <ChefHat className={editingId === recipe.id ? 'text-amber-600' : 'text-slate-400 group-hover:text-emerald-500'} size={24} />
                                         </div>
 
                                         <div className="flex gap-1">

@@ -52,7 +52,7 @@ export default function Sidebar({ addRecipe, name, setName, ingredients, setIngr
                           type="button"
                           onClick={resetForm}
                           style={{ animation: 'slideDown 300ms ease-out' }}
-                          className="w-full  py-4 cursor-pointer bg-rose-500 text-white rounded-2xl font-bold flex items-center justify-center gap-2 hover:bg-rose-400 transition-all duration-300 active:scale-85 shadow-xl shadow-slate-200"
+                          className="w-full py-4 cursor-pointer bg-rose-500 text-white rounded-2xl font-bold flex items-center justify-center gap-2 hover:bg-rose-400 transition-all duration-300 active:scale-85 shadow-xl shadow-slate-200"
                         >
                           <X size={20} /> Cancel Edit
                         </button>
