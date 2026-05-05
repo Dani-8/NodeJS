@@ -2,13 +2,8 @@ import { useState } from "react"
 import { Edit3, Plus, Trash2, X } from "lucide-react"
 
 import { useAppLogic } from "./useAppLogic"
-import Header from "./components/Header"
-import BackendLogic from "./components/BackendLogic"
-
 
 function App() {
-  const [view, setView] = useState("app") // "app" or "logic"
-
   const { tasks, setTasks, form, setForm, editingId, setEditingId, remove, handleSubmit } = useAppLogic()
 
   return (
@@ -17,7 +12,6 @@ function App() {
         <Header view={view} setView={setView} />
 
         <main className="max-w-7xl mx-auto p-6">
-          {view === "app" ? (
             <div className="grid grid-cols-1 md:grid-cols-12 gap-10">
               {/* Form */}
               <div className="md:col-span-5">
@@ -69,11 +63,6 @@ function App() {
                 ))}
               </div>
             </div>
-          ) :
-            (
-              <BackendLogic />
-            )
-          }
         </main>
       </div>
     </>
