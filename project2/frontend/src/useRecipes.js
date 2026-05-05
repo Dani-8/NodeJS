@@ -95,8 +95,6 @@ export const useRecipes = () => {
 
     // Now let's implement the addRecipe function to send new recipes to the Server
     const addRecipe = async (e) => {
-        e.preventDefault()
-
         if (!name.trim() || !ingredients.trim()) {
             setError("Please fill in all fields.")
             return
