@@ -155,7 +155,7 @@ export const useRecipes = () => {
         }
     }
 
-
+    // This function will populate the form with the recipe's current data and set the editingId to enable edit mode
     const startEditing = (recipe) => {
         setEditingId(recipe.id)
         setName(recipe.title)
@@ -163,7 +163,7 @@ export const useRecipes = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-
+    // This function will reset the form and exit edit mode
     const resetForm = () => {
         setEditingId(null)
         setName("")
