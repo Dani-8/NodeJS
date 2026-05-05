@@ -19,19 +19,19 @@ export default function SystemOverview({ setActiveTab }) {
 
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-                        <div className="p-6 bg-rose-50 rounded-[2rem] border border-rose-100">
+                        <div className="p-6 bg-rose-50 rounded-[2rem] border border-rose-100 hover:bg-rose-100 hover:shadow-xl hover:shadow-rose-200/70 hover:border-rose-200 transition-all duration-500">
                             <Server className="text-rose-500 mb-3" size={24} />
                             <h4 className="font-bold text-sm uppercase mb-1">Server</h4>
                             <p className="text-xs text-slate-600 leading-relaxed text-balance">Node.js + Express environment listening on Port 5000.</p>
                         </div>
                         
-                        <div className="p-6 bg-emerald-50 rounded-[2rem] border border-emerald-100">
+                        <div className="p-6 bg-emerald-50 rounded-[2rem] border border-emerald-100 hover:bg-emerald-100 hover:shadow-xl hover:shadow-emerald-200/70 hover:border-emerald-200 transition-all duration-500">
                             <Cpu className="text-emerald-500 mb-3" size={24} />
                             <h4 className="font-bold text-sm uppercase mb-1">REST Endpoints</h4>
                             <p className="text-xs text-slate-600 leading-relaxed text-balance">Defined endpoints like /tasks, which handle HTTP requests (GET, POST, PUT, DELETE).</p>
                         </div>
                         
-                        <div className="p-6 bg-blue-50 rounded-[2rem] border border-blue-100">
+                        <div className="p-6 bg-blue-50 rounded-[2rem] border border-blue-100 hover:bg-blue-100 hover:shadow-xl hover:shadow-blue-200/70 hover:border-blue-200 transition-all duration-500">
                             <Database className="text-blue-500 mb-3" size={24} />
                             <h4 className="font-bold text-sm uppercase mb-1">State</h4>
                             <p className="text-xs text-slate-600 leading-relaxed text-balance">Data stored in a persistent JavaScript array on the server.</p>
