@@ -1,6 +1,6 @@
 # Full-Stack Node.js & React Portfolio
 
-A professional collection of two full-stack web applications built to demonstrate modern Node.js and React development patterns.
+A professional collection of three full-stack web applications built to demonstrate modern Node.js and React development patterns.
 
 This repository contains independent frontend and backend implementations for each project so you can explore:
 - clean Express API design
@@ -25,7 +25,19 @@ Key highlights:
 [Live Demo:](https://node-js-black-xi.vercel.app/)
 
 
-### 2. Project 02 — KitchenVault
+### 2. Project 02 — Task Manager
+A simple task management application with full CRUD operations.
+
+Key highlights:
+- Task creation, editing, and deletion
+- Clean, intuitive interface
+- Backend API for task management
+- Foundation for more complex data-driven apps
+
+[Live Demo:](https://node-js-zoq6.vercel.app/)
+
+
+### 3. Project 03 — KitchenVault
 A premium recipe repository with a polished UI and backend-driven data flow.
 
 Key highlights:
@@ -51,7 +63,16 @@ my-app/
 │     ├─ src/
 │     ├─ public/
 │     └─ vite.config.js
-├─ project2/
+├─ project2-v1/
+│  ├─ backend/
+│  │  ├─ package.json
+│  │  └─ server.js
+│  └─ frontend/
+│     ├─ package.json
+│     ├─ src/
+│     ├─ public/
+│     └─ vite.config.js
+├─ project2-v2/
 │  ├─ backend/
 │  │  ├─ package.json
 │  │  └─ server.js
@@ -95,9 +116,11 @@ Each project keeps backend and frontend code separate so you can work on the API
 Project files to review:
 - `project1/backend/server.js`
 - `project1/frontend/src/App.jsx`
-- `project2/backend/server.js`
-- `project2/frontend/src/App.jsx`
-- `project2/frontend/src/useRecipes.js`
+- `project2-v1/backend/server.js`
+- `project2-v1/frontend/src/App.jsx`
+- `project2-v2/backend/server.js`
+- `project2-v2/frontend/src/App.jsx`
+- `project2-v2/frontend/src/useRecipes.js`
 
 Use these files to trace how UI actions map to API requests and how data flows through the app.
 
