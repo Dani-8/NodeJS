@@ -148,7 +148,7 @@ export const useRecipes = () => {
             })
             const updateRecipe = await recipe.json()
 
-            setRecipes(recipe => recipe.map(r => r.id === editingId ? updateRecipe : r))
+            setRecipes(recipes.map(r => r.id === editingId ? updateRecipe.recipe : r))
             resetForm()
         }catch(err){
             setError("Failed to update recipe - It seems the server is down. Please try again later.")
@@ -171,9 +171,23 @@ export const useRecipes = () => {
     }
 
 
+
+    // Handle form submission for both adding and updating recipes 
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+        if(!name.trim()) return
+
+        if (editingId) {
+            await updateRecipe()
+        } else {
+            await addRecipe()
+        }
+    }   
+
+
     return {
         recipes, name, setName, ingredients, setIngredients, editingId, setEditingId, resetForm,
-        loading, error, liveServer, serverName, addRecipe, deleteRecipe, fetchRecipes
+        loading, error, liveServer, serverName, addRecipe, deleteRecipe, fetchRecipes, startEditing, handleSubmit
     }
 }
 

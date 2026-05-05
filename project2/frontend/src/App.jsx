@@ -12,7 +12,7 @@ import { useRecipes } from "./useRecipes"
 function App() {
   const {
     recipes, name, setName, ingredients, setIngredients, editingId, setEditingId, resetForm,
-    loading, error, liveServer, serverName, addRecipe, deleteRecipe, fetchRecipes
+    loading, error, liveServer, serverName, addRecipe, deleteRecipe, fetchRecipes, startEditing, handleSubmit
   } = useRecipes()
 
   const [activeTab, setActiveTab] = useState("vault"); // "vault", "explorer"
@@ -46,7 +46,7 @@ function App() {
 
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-15">
                 <Sidebar
-                  addRecipe={addRecipe}
+                  addRecipe={handleSubmit}
                   name={name}
                   setName={setName}
                   ingredients={ingredients}
@@ -64,6 +64,7 @@ function App() {
                   deleteRecipe={deleteRecipe}
                   editingId={editingId}
                   setEditingId={setEditingId}
+                  startEditing={startEditing}
                 />
               </div>
             </>

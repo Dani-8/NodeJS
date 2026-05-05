@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { ChefHat, Clock, Trash2, UtensilsCrossed, Edit3 } from 'lucide-react'
 
-export default function RecipeList({ recipes, loading, deleteRecipe, editingId, setEditingId }) {
+export default function RecipeList({ recipes, loading, deleteRecipe, editingId, setEditingId, startEditing }) {
     const initialPlaceholderColors = ['bg-rose-50', 'bg-emerald-50', 'bg-rose-50', 'bg-emerald-50', 'bg-rose-50']
 
     const shuffle = (arr) => {
@@ -58,7 +58,7 @@ export default function RecipeList({ recipes, loading, deleteRecipe, editingId, 
                                         </div>
 
                                         <div className="flex gap-1">
-                                            <button onClick={() => setEditingId(recipe.id)}
+                                            <button onClick={() => startEditing(recipe)}
                                                 className={`p-2 transition-all duration-300 cursor-pointer hover:text-emerald-500 hover:bg-emerald-50 rounded-xl ${editingId === recipe.id ? 'text-amber-600' : 'text-slate-300'}`}
                                             >
                                                 <Edit3 size={20} />
