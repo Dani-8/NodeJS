@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { ChefHat, Clock, Trash2, UtensilsCrossed } from 'lucide-react'
+import { ChefHat, Clock, Trash2, UtensilsCrossed, Edit3 } from 'lucide-react'
 
 export default function RecipeList({ recipes, loading, deleteRecipe, editingId, setEditingId }) {
     const initialPlaceholderColors = ['bg-rose-50', 'bg-emerald-50', 'bg-rose-50', 'bg-emerald-50', 'bg-rose-50']
@@ -57,11 +57,19 @@ export default function RecipeList({ recipes, loading, deleteRecipe, editingId, 
                                             <ChefHat className="text-slate-400 group-hover:text-emerald-500" size={24} />
                                         </div>
 
-                                        <button onClick={() => deleteRecipe(recipe.id)}
-                                            className="p-2 cursor-pointer text-slate-300 hover:text-rose-500 hover:bg-rose-50 rounded-xl transition-all duration-300 active:scale-80"
-                                        >
-                                            <Trash2 size={20} />
-                                        </button>
+                                        <div className="flex gap-1">
+                                            <button onClick={() => setEditingId(recipe.id)}
+                                                className={`p-2 transition-all duration-300 cursor-pointer hover:text-emerald-500 hover:bg-emerald-50 rounded-xl ${editingId === recipe.id ? 'text-amber-600' : 'text-slate-300'}`}
+                                            >
+                                                <Edit3 size={20} />
+                                            </button>
+
+                                            <button onClick={() => deleteRecipe(recipe.id)}
+                                                className="p-2 cursor-pointer text-slate-300 hover:text-rose-500 hover:bg-rose-50 rounded-xl transition-all duration-300 active:scale-80"
+                                            >
+                                                <Trash2 size={20} />
+                                            </button>
+                                        </div>
                                     </div>
 
 

@@ -11,7 +11,7 @@ import { useRecipes } from "./useRecipes"
 
 function App() {
   const {
-    recipes, name, setName, ingredients, setIngredients,
+    recipes, name, setName, ingredients, setIngredients, editingId, setEditingId, resetForm,
     loading, error, liveServer, serverName, addRecipe, deleteRecipe, fetchRecipes
   } = useRecipes()
 
@@ -51,14 +51,19 @@ function App() {
                   setName={setName}
                   ingredients={ingredients}
                   setIngredients={setIngredients}
+                  editingId={editingId}
+                  setEditingId={setEditingId}
                   error={error}
                   fetchRecipes={fetchRecipes}
+                  resetForm={resetForm}
                 />
 
                 <RecipeList
                   loading={loading}
                   recipes={recipes}
                   deleteRecipe={deleteRecipe}
+                  editingId={editingId}
+                  setEditingId={setEditingId}
                 />
               </div>
             </>

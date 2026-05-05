@@ -172,7 +172,7 @@ export const useRecipes = () => {
 
 
     return {
-        recipes, name, setName, ingredients, setIngredients, editingId, setEditingId,
+        recipes, name, setName, ingredients, setIngredients, editingId, setEditingId, resetForm,
         loading, error, liveServer, serverName, addRecipe, deleteRecipe, fetchRecipes
     }
 }
