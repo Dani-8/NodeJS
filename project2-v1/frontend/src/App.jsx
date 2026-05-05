@@ -9,7 +9,6 @@ function App() {
   return (
     <>
       <div className="min-h-screen bg-rose-50/80 font-sans text-slate-900">
-        <Header view={view} setView={setView} />
 
         <main className="max-w-7xl mx-auto p-6">
             <div className="grid grid-cols-1 md:grid-cols-12 gap-10">
