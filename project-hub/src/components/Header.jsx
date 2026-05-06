@@ -1,4 +1,5 @@
-import { Github, Layers } from "@phosphor-icons/react"
+import { Layers } from "lucide-react"
+import { FaGithub } from "react-icons/fa";
 
 export default function Header(){
     return (
@@ -21,7 +22,7 @@ export default function Header(){
 
             <div className="flex gap-4">
                 <a href="https://github.com/Dani-8/NodeJS" className="p-3 bg-white/5 border border-white/10 rounded-2xl hover:bg-white/10 transition-all text-white">
-                    <Github size={24} />
+                    <FaGithub size={22} />
                 </a>
             </div>
         </header>
