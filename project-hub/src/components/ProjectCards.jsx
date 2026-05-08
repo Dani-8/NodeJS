@@ -18,7 +18,7 @@ export default function ProjectCards({ projects }) {
                             </div>
 
                             <span className="text-[10px] font-black text-slate-500 uppercase tracking-widest bg-white/5 px-3 py-1 rounded-full border border-white/10">
-                                {project.version}
+                                {project.projectNo}
                             </span>
                         </div>
 
@@ -55,7 +55,7 @@ export default function ProjectCards({ projects }) {
                             <a href={project.link}
                                 className="flex items-center gap-2 text-white font-bold text-sm hover:gap-3 transition-all"
                             >
-                                Explore <ArrowUpRight size={16} className="text-indigo-500" />
+                                Explore <ArrowUpRight size={16} className={`${project.linkIconColor}`} />
                             </a>
                         </div>
                     </div>
