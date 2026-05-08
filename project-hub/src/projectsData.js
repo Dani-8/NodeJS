@@ -31,6 +31,9 @@ const projects = [
       color: "from-emerald-500 to-teal-600",
       boderOnHover: "hover:border-emerald-500/50",
       link: "https://node-js-kn2n.vercel.app/"
+    },
+    {
+      id: "project3",
     }
   ]
 
