@@ -1,5 +1,6 @@
-import projects from "./projectsData"
 import Header from "./components/Header"
+import projects from "./projectsData"
+import ProjectCards from "./components/ProjectCards"
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
 
           <Header />
 
+          <ProjectCards projects={projects} />
 
 
 
