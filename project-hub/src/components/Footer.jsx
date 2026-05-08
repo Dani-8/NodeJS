@@ -4,12 +4,12 @@ export default function Footer() {
             <div className="flex gap-6">
                 <span className="flex items-center gap-2">
                     <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full" />
-                    All Systems Operational
+                    Online 
                 </span>
             </div>
 
             <span className="font-mono lowercase text-slate-600">
-                root@portfolio:~# done
+                &copy; 2026 ProjectHub. All rights reserved.
             </span>
         </footer>
     )
