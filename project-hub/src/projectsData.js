@@ -34,6 +34,14 @@ const projects = [
     },
     {
       id: "project3",
+      title: "Project Three",
+      titleOnHover: "group-hover:text-green-400",
+      version: "v1.0",
+      description: "A modern project with sleek design and intuitive user experience.",
+      tech: ["React", "Tailwind", "Vite"],
+      color: "from-green-500 to-emerald-600",
+      boderOnHover: "hover:border-green-500/50",
+      link: "https://node-js-xyz123.vercel.app/"
     }
   ]
 
