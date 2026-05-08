@@ -1,4 +1,5 @@
 import Header from "./components/Header"
+import Footer from "./components/Footer"
 import projects from "./projectsData"
 import ProjectCards from "./components/ProjectCards"
 
@@ -18,10 +19,7 @@ export default function App() {
 
           <ProjectCards projects={projects} />
 
-
-
-
-
+          <Footer />
         </div>
       </div>
     </>
