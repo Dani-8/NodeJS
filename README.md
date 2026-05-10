@@ -48,6 +48,13 @@ Key highlights:
 
 [Live Demo:](https://node-js-kn2n.vercel.app/)
 
+
+### 4. Project 04 — 
+
+
+[Live Demo:](https://node-js-7t66.vercel.app/)
+
+
 ---
 
 ## 🧱 Repository Structure
@@ -73,6 +80,15 @@ my-app/
 │     ├─ public/
 │     └─ vite.config.js
 ├─ project2-v2/
+│  ├─ backend/
+│  │  ├─ package.json
+│  │  └─ server.js
+│  └─ frontend/
+│     ├─ package.json
+│     ├─ src/
+│     ├─ public/
+│     └─ vite.config.js
+├─ project3/
 │  ├─ backend/
 │  │  ├─ package.json
 │  │  └─ server.js
