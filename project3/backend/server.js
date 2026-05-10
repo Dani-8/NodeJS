@@ -1,6 +1,10 @@
 const express = require('express')
 const cors = require('cors')
 
+const mongoose = require("mongoose")
+const jtw = require("jsonwebtoken")
+const bcrypt = require("bcrypt")
+
 const app = express()
 const PORT = 5000
 
