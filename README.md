@@ -49,8 +49,15 @@ Key highlights:
 [Live Demo:](https://node-js-kn2n.vercel.app/)
 
 
-### 4. Project 04 — Task Manager (With MongoDB)
+### 4. Project 04 — Task Manager (MongoDB Version)
+A simple task management app with MongoDB integration for storing and managing tasks.
 
+Key highlights:
+- Add new tasks
+- Delete tasks instantly
+- MongoDB database connection
+- Simple and clean UI
+- Backend-powered task handling
 
 [Live Demo:](https://node-js-7t66.vercel.app/)
 
