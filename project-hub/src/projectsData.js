@@ -37,10 +37,10 @@ const projects = [
     },
     {
       id: "project3",
-      title: "Project Three",
+      title: "Task Manager (With MongoDB)",
       titleOnHover: "group-hover:text-stone-400",
       projectNo: "p3.0",
-      description: "A modern project with sleek design and intuitive user experience.",
+      description: "A simple Task Management system with clean architecture & with MongoDB.",
       tech: ["React", "Tailwind", "Lucide", "Express", "REST API", "MongoDB"],
       color: "from-stone-500 to-taupe-600",
       boderOnHover: "hover:border-stone-500/50",
