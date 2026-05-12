@@ -51,11 +51,7 @@ function App() {
       <div className="max-w-md mx-auto">
 
         {/* HEADER */}
-        <div className="text-center mb-10">
-          <div className="inline-flex items-center justify-center p-3 bg-indigo-600 rounded-2xl shadow-lg mb-4">
-            <CheckCircle2 className="w-8 h-8 text-white" />
-          </div>
-
+        <div className="text-center my-10">
           <h1 className="text-3xl font-extrabold tracking-tight text-slate-900">
             Task Manager
           </h1>
@@ -81,7 +77,8 @@ function App() {
           </button>
         </div>
 
-        {}
+
+        {/* result */}
         <div className="space-y-3">
           {loading && tasks.length === 0 ? (
             <div className="flex flex-col items-center justify-center py-12 text-slate-400">
@@ -110,13 +107,15 @@ function App() {
           ) : (
             <div className="text-center py-16 bg-white rounded-2xl border-2 border-dashed border-slate-200">
               <ClipboardList className="w-12 h-12 text-slate-300 mx-auto mb-4" />
+
               <h3 className="text-slate-900 font-semibold">No tasks yet</h3>
               <p className="text-slate-500 text-sm mt-1">Add your first task above to get started.</p>
             </div>
           )}
         </div>
 
-        {}
+        
+        {/* Tasks counter */}
         {tasks.length > 0 && (
           <div className="mt-8 text-center">
             <p className="text-xs text-slate-400 font-medium uppercase tracking-wider">
