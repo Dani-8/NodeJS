@@ -1,11 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Plus, Trash2, CheckCircle2, ClipboardList, Loader2 } from "lucide-react";
+// ======================================================================================
 
-/**
- * Task Manager Component
- * Advanced UI overhaul keeping original logic intact.
- */
 function App() {
   const [tasks, setTasks] = useState([]);
   const [input, setInput] = useState("");
@@ -64,6 +61,7 @@ function App() {
           </h1>
         </div>
 
+
         {/* FORM */}
         <div className="bg-white p-2 rounded-2xl shadow-sm border border-slate-200 flex items-center gap-2 mb-8 focus-within:ring-2 focus-within:ring-indigo-500 transition-all duration-200">
           <input
@@ -71,7 +69,7 @@ function App() {
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={(e) => e.key === 'Enter' && addTask()}
             placeholder="What needs to be done?"
-            className="flex-1 bg-transparent border-none focus:ring-0 px-4 py-2 text-slate-700 placeholder:text-slate-400"
+            className="flex-1 bg-transparent outline-none px-4 py-2 text-slate-700 placeholder:text-slate-400"
           />
 
           <button 
@@ -102,7 +100,7 @@ function App() {
                 </div>
                 <button 
                   onClick={() => deleteTask(t._id)}
-                  className="opacity-0 group-hover:opacity-100 p-2 text-slate-400 hover:text-red-500 hover:bg-red-50 rounded-lg transition-all duration-200"
+                  className="cursor-pointer opacity-0 group-hover:opacity-100 p-2 text-slate-400 hover:text-red-500 hover:bg-red-50 rounded-lg transition-all duration-200"
                   aria-label="Delete task"
                 >
                   <Trash2 className="w-4 h-4" />
