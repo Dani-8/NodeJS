@@ -44,7 +44,7 @@ const projects = [
       tech: ["React", "Tailwind", "Lucide", "Express", "REST API", "MongoDB"],
       color: "from-stone-500 to-taupe-600",
       boderOnHover: "hover:border-stone-500/50",
-      link: "#",
+      link: "https://node-js-7t66.vercel.app/",
       linkIconColor: "text-stone-500"
     }
   ]
