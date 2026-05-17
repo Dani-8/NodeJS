@@ -13,6 +13,7 @@ export default function App() {
           <div className="absolute top-[20%] -right-[5%] w-[30%] h-[30%] bg-emerald-500/10 blur-[120px] rounded-full" />
         </div>
 
+
         <div className="relative z-10 max-w-7xl mx-auto px-6 py-12">
 
           <Header />
